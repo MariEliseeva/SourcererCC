@@ -1,6 +1,13 @@
 #!/bin/bash
-scriptPATH=`realpath $0`
+
+realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
+
+scriptPATH=$(realpath "$0")
 rootPATH=`dirname $scriptPATH`
+echo $scriptPATH
 echo $rootPATH
 rm -rf $rootPATH/NODE*
 num_nodes="${1:-2}"
