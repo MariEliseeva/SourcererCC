@@ -779,4 +779,3 @@ if __name__ == '__main__':
 
   p_elapsed = dt.datetime.now() - p_start
   print("*** All done. %s files in %s" % (file_count, p_elapsed))
-
